@@ -8,8 +8,15 @@ import net.minecraft.world.food.FoodProperties;
 public class ModFoods {
     public static final FoodProperties ORANGE =
             new FoodProperties.Builder()
-                .nutrition(100)
-                .saturationModifier(100.0f)
+                .nutrition(10)
+                .saturationModifier(20.0f)
                 .alwaysEdible()
-                .effect(new MobEffectInstance(MobEffects.JUMP,5*20,30),1).build();
+                .effect(new MobEffectInstance(MobEffects.JUMP,5*20,3),1).build();
+
+    public static final FoodProperties DRIED_ORANGE =
+            new FoodProperties.Builder()
+                    .nutrition(40)
+                    .saturationModifier(100.0f)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.LUCK,5*20,3),1).build();
 }

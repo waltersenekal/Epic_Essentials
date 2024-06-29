@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.3510,
+  "ingredient": {
+    "item": "epicessentials:orange"
+  },
+  "result": {
+    "id": "epicessentials:dried_orange"
+  }
+}

@@ -1,5 +1,6 @@
 package io.github.waltersenekal.epic_essentials.main;
 
+import io.github.waltersenekal.epic_essentials.block.ModBlocks;
 import io.github.waltersenekal.epic_essentials.item.ModItems;
 import io.github.waltersenekal.epic_essentials.ui.ModTabs;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class EpicEssentials
     public EpicEssentials(IEventBus modEventBus, ModContainer modContainer)
     {
         ModItems.ITEMS.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
         ModTabs.CREATIVE_TABS.register(modEventBus);
 
 

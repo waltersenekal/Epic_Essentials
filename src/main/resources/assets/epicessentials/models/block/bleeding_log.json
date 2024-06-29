@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "epicessentials:block/bleeding_log_top",
+    "side": "epicessentials:block/bleeding_log"
+  }
+}

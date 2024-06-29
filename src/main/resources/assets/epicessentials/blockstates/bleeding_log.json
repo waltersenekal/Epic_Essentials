@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "epicessentials:block/bleeding_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "epicessentials:block/bleeding_log"
+    },
+    "axis=z": {
+      "model": "epicessentials:block/bleeding_log_horizontal",
+      "x": 90
+    }
+  }
+}

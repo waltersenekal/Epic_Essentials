@@ -1,6 +1,14 @@
 {
   "item.epicessentials.orange": "Orange",
+  "item.epicessentials.dried_orange": "Dried Orange",
+  "item.epicessentials.tempered_iron_ingot": "Tempered Iron Ingot",
 
-  "itemGroup.epicessentialsstuff": "Epic Essentials"
+  "block.epicessentials.checkered_tile": "Checkered Tile",
+  "block.epicessentials.bleeding_log": "Bleeding Log",
+  "block.epicessentials.bleeding_planks": "Bleeding Planks",
+  "block.epicessentials.bleeding_slab": "Bleeding Slab",
+  "block.epicessentials.big_mushroom": "Big Mushroom",
 
+  "itemGroup.epicessentials": "Epic Items",
+  "blockGroup.epicessentials": "Epic Blocks"
 }

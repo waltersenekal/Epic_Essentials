@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "epicessentials:bleeding_log"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "epicessentials:block/bleeding_log"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "epicessentials:block/checkered_tile"
+    }
+  }
+}
