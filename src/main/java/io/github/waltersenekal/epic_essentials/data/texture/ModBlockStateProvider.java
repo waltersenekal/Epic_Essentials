@@ -27,7 +27,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         addNormalBlock(ModBlocks.BLEEDING_PLANKS.get());
         addLogBlock(ModBlocks.BLEEDING_LOG.get());
         addSlabBlock(ModBlocks.BLEEDING_SLAB.get(),ModBlocks.BLEEDING_PLANKS.get());
-        addNormalBlock(ModBlocks.BIG_MUSHROOM.get());
+        //addNormalBlock(ModBlocks.BIG_MUSHROOM.get());
+        addFlowerBlock(ModBlocks.BIG_MUSHROOM.get());
     }
 
     private void addNormalBlock(Block block){
@@ -35,6 +36,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String path = blockKey.getPath();
         simpleBlock(block,models().cubeAll(path,modLoc("block/" + path)));
         simpleBlockItem(block,models().getExistingFile(modLoc("block/"+path)));
+    }
+    private void addFlowerBlock(Block block){
+        ResourceLocation blockKey = BuiltInRegistries.BLOCK.getKey(block);
+        String path = blockKey.getPath();
+        simpleBlockWithItem(block,models().cross(path,modLoc("block/" + path)).renderType("cutout"));
+        simpleBlockItem(block,models().getExistingFile(modLoc("block/"+path)));
+
     }
 
     private void addLogBlock(Block block){
