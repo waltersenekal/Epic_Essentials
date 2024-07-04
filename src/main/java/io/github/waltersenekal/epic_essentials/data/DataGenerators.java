@@ -3,6 +3,7 @@ package io.github.waltersenekal.epic_essentials.data;
 import io.github.waltersenekal.epic_essentials.EpicEssentials;
 import io.github.waltersenekal.epic_essentials.data.lang.ModEnLangProvider;
 import io.github.waltersenekal.epic_essentials.data.loottable.ModLootTableProvider;
+import io.github.waltersenekal.epic_essentials.data.recipe.ModRecipeProvider;
 import io.github.waltersenekal.epic_essentials.data.tag.ModBlockTagsProvider;
 import io.github.waltersenekal.epic_essentials.data.texture.ModBlockStateProvider;
 import io.github.waltersenekal.epic_essentials.data.texture.ModItemStateProvider;
@@ -22,6 +23,7 @@ public class DataGenerators {
             generator.addProvider( true, new ModBlockStateProvider(output,existingFileHelper));
             generator.addProvider( true, new ModBlockTagsProvider(output,event.getLookupProvider(),existingFileHelper));
             generator.addProvider(true,new ModLootTableProvider(output,event.getLookupProvider()));
+            generator.addProvider(true,new ModRecipeProvider(output,event.getLookupProvider()));
 
 
         }
