@@ -6,34 +6,39 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static io.github.waltersenekal.epic_essentials.main.EpicEssentials.MODID;
+import java.util.HashSet;
+import java.util.Set;
+
+import static io.github.waltersenekal.epic_essentials.EpicEssentials.MODID;
 
 public class ModTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB,MODID);
-    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> COOL_STUFF_ITEMS =
-    CREATIVE_TABS.register("epicessentialsitems",()-> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.epicessentials"))
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(()-> ModItems.ORANGE.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(ModItems.ORANGE.get());
-                output.accept(ModItems.DRIED_ORANGE.get());
-                output.accept(ModItems.TEMPERED_IRON_INGOT.get());
-            }).build());
-    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> COOL_STUFF_BLOCKS =
-    CREATIVE_TABS.register("epicessentialsblocks",()-> CreativeModeTab.builder()
-            .title(Component.translatable("blockGroup.epicessentials"))
-            .withTabsBefore(COOL_STUFF_ITEMS.getKey())
-            .icon(()-> ModItems.CHECKERED_TILE.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(ModBlocks.CHECKERED_TILE.get());
-                output.accept(ModBlocks.BLEEDING_LOG.get());
-                output.accept(ModBlocks.BLEEDING_PLANKS.get());
-                output.accept(ModBlocks.BLEEDING_SLAB.get());
-                output.accept(ModBlocks.BIG_MUSHROOM.get());
-            }).build());
+    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> EPIC_ESSENTIALS_TAB = CREATIVE_TAB.register("epicessentials",() ->{
+        CreativeModeTab.Builder builder= CreativeModeTab.builder();
+
+        builder.displayItems((itemDisplay, output)-> {
+            Set<Item> addedItems = new HashSet<>();
+            ModItems.ITEMS.getEntries()
+                    .stream()
+                    .map((item) -> item.get().asItem())
+                    .filter(addedItems::add)
+                    .forEach(output::accept);
+            ModBlocks.BLOCKS.getEntries()
+                    .stream()
+                    .map((block)->block.get().asItem())
+                    .filter(addedItems::add)
+                    .forEach(output::accept);
+        });
+        builder.icon(() -> ModItems.ORANGE.get().getDefaultInstance());
+        builder.title(Component.translatable("creativetab.epicessentials"));
+        return builder.build();
+    });
+
+
 }

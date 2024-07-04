@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "epicessentials:block/bleeding_planks",
-    "side": "epicessentials:block/bleeding_planks",
-    "top": "epicessentials:block/bleeding_planks"
-  }
-}
